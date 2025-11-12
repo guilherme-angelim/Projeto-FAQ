@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+margin: 20px;
+background: #f4f4f4;
+line-height: 1.6;
+}
+
+.faq-conteiner{
+    width: 800px;
+    margin:30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.faq-item{
+    margin-bottom:15px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-pergunta{
+    cursor: pointer;
+    background: #007bff;
+    color: #fff;
+    padding: 15px 40px 15px;
+    position: relative;
+    font-weight: 700;
+    /* display: block;
+    tira a setinha  */
+}
+
+/* remove o marcador inicial e permite com que a gente coloque o nosso próprio marcador, pseudo elemento */
+.faq-pergunta::marker{
+    content: "";
+}
+
+/* adiciona o ícone de + inicial */
+.faq-pergunta::before{
+    content: "+";
+    position: absolute;
+    inset-inline-end: 15px;
+    /* joga o elemento lá pro final do retangulo azul */
+    transition: transform 0.3s ease;
+    /* adiciona transição suave */
+    font-size:1.2rem;
+}
+
+/* muda o icone para - quando estiver aberto */
+.faq-item[open] .faq-pergunta::before {
+    content: "-";
+    /* realiza efeito de rotação ao abrir ou fechar */
+    transform: rotate(180deg);
+}
+
+.faq-resposta{
+    padding: 15px;
+    background: #ccc;
+    border-top: 2px solid #eee;
+    color: black;
+}
